@@ -1,0 +1,55 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { ShoppingCart } from "lucide-react";
+
+export default function MinecraftLauncherBuy() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-green-700 to-green-900 text-white p-6">
+      <header className="text-center mb-12">
+        <h1 className="text-5xl font-bold font-mono">Minecraft Launcher Pro</h1>
+        <p className="mt-4 text-lg text-green-200">Your gateway to unlimited Minecraft adventures!</p>
+      </header>
+
+      <main className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"
+            alt="Minecraft Launcher"
+            className="rounded-2xl shadow-lg border-4 border-green-600"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-green-800 border-green-600">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-bold mb-4">What’s Inside:</h2>
+              <ul className="list-disc list-inside space-y-2 text-green-100">
+                <li>One-click Minecraft version switching</li>
+                <li>Mod and shader support</li>
+                <li>Optimized for performance</li>
+                <li>Custom skins and profiles</li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-4">
+                <span className="text-xl font-semibold text-green-300">Only $14.99</span>
+                <Button className="bg-yellow-400 text-black hover:bg-yellow-300">
+                  <ShoppingCart className="mr-2" /> Buy Now
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </main>
+    </div>
+  );
+}
